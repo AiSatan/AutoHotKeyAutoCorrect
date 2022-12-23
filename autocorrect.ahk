@@ -1,22 +1,12 @@
 ﻿; Ctrl+Alt+c autocorrect selected text
 ^!c::
 {
-    FileEncoding "UTF-8"
-    EncodeDecodeURI(str, encode := true, component := true) {
-        static Doc, JS
-        Doc := ComObject("htmlfile")
-        Doc.write("<meta http-equiv='X-UA-Compatible' content='IE=9'>")
-        JS := Doc.parentWindow
-        ( Doc.documentMode < 9 && JS.execScript() )
-        Return JS.eval( (encode ? "en" : "de") . "codeURI" . (component ? "Component" : "") . "('" . str . "')" )
-    }
-
     clipback := ClipboardAll()
     A_Clipboard := ""
     Send("^c")
     ClipWait
 
-    variable := "https://www.google.com/search?q=" . A_Clipboard ;EncodeDecodeURI(A_Clipboard)
+    variable := "https://www.google.com/search?q=" . A_Clipboard
     whr := ComObject("WinHttp.WinHttpRequest.5.1")
 
     whr.Open("GET", variable, true)
