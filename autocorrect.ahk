@@ -6,7 +6,7 @@
     Send("^c")
     ClipWait
 
-    variable := "https://www.google.com/search?q=" . A_Clipboard
+    variable := "https://www.google.com/search?hl=en&q=" . A_Clipboard
     whr := ComObject("WinHttp.WinHttpRequest.5.1")
 
     whr.Open("GET", variable, true)
