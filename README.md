@@ -1,5 +1,5 @@
 # AutoHotKeyAutoCorrect
-AutoHotKey v2 script for AutoCorrect world by google.
+AutoHotKey v2 script for AutoCorrect word by google.
 
 
 Hello, I didn't find any alternatives for "Autocorrect Anything":
